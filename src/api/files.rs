@@ -1,4 +1,5 @@
 //! Module that defines the public file-based API of [`Engine`].
+#![cfg(not(target_vendor = "teaclave"))]
 #![cfg(not(feature = "no_std"))]
 #![cfg(not(target_family = "wasm"))]
 

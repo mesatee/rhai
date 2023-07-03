@@ -222,6 +222,7 @@ pub use api::build_type::{CustomType, TypeBuilder};
 pub use api::custom_syntax::Expression;
 #[cfg(not(feature = "no_std"))]
 #[cfg(not(target_family = "wasm"))]
+#[cfg(not(target_vendor = "teaclave"))]
 pub use api::files::{eval_file, run_file};
 pub use api::{eval::eval, events::VarDefInfo, run::run};
 pub use ast::{FnAccess, AST};

@@ -593,6 +593,7 @@ impl Expr {
     /// Is the expression a simple variable access?
     ///
     /// `non_qualified` is ignored under `no_module`.
+    #[cfg(not(target_vendor = "teaclave"))]
     #[inline]
     #[must_use]
     pub(crate) fn is_variable_access(&self, _non_qualified: bool) -> bool {

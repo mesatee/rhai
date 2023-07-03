@@ -12,6 +12,7 @@ use std::prelude::v1::*;
 #[cfg(any(not(feature = "no_index"), not(feature = "no_object")))]
 use crate::func::register::Mut;
 
+#[cfg(not(target_vendor = "teaclave"))]
 #[cfg(not(feature = "no_std"))]
 #[cfg(not(target_family = "wasm"))]
 use std::path::PathBuf;
@@ -27,6 +28,7 @@ impl Engine {
     /// This method is deprecated. Use [`run_file`][Engine::run_file] instead.
     ///
     /// This method will be removed in the next major version.
+    #[cfg(not(target_vendor = "teaclave"))]
     #[deprecated(since = "1.1.0", note = "use `run_file` instead")]
     #[cfg(not(feature = "no_std"))]
     #[cfg(not(target_family = "wasm"))]
@@ -45,6 +47,7 @@ impl Engine {
     /// This method is deprecated. Use [`run_file_with_scope`][Engine::run_file_with_scope] instead.
     ///
     /// This method will be removed in the next major version.
+    #[cfg(not(target_vendor = "teaclave"))]
     #[deprecated(since = "1.1.0", note = "use `run_file_with_scope` instead")]
     #[cfg(not(feature = "no_std"))]
     #[cfg(not(target_family = "wasm"))]
